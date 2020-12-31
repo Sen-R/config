@@ -9,7 +9,7 @@
 
 ;; Adds the Melpa archive to the list of available repositories
 (add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/"))
 
 ;; Initializes the package infrastructure
 (package-initialize)
@@ -23,11 +23,15 @@
 ;; myPackages contains a list of package names
 (defvar myPackages
   '(better-defaults                 ;; Set up some better Emacs defaults
+    ido
     material-theme                  ;; Theme
     elpy                            ;; Emacs Lisp Python Environment
     flycheck                        ;; Syntax checking
     yaml-mode                       ;; For editing yaml
     markdown-mode                   ;; Editing md documents
+    web-mode                        ;; Edit html, css, etc
+    magit                           ;; Git from Emacs
+    ein                             ;; Jupyter from Emacs
     )
   )
 
@@ -46,6 +50,7 @@
 (load-theme 'material t)            ;; Load material theme
 (global-linum-mode t)               ;; Enable line numbers globally
 (setq column-number-mode t)         ;; Show column and line numbers
+(ido-mode t)
 
 ;; ====================================
 ;; Development Setup
